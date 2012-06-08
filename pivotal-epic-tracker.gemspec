@@ -8,8 +8,8 @@ Gem::Specification.new do |s|
   s.authors     = ["Arif Bandali"]
   s.email       = ["hello@arifb.com"]
   s.homepage    = ""
-  s.summary     = %q{A tool to give high-level visibility into features that are being built, and where in the dev cycle they are.}
-  s.description = %q{TODO: Write a gem description}
+  s.summary     = %q{A tool used to give high-level visibility into features that are being built, and where in the dev cycle they are. Obviously uses Pivotal Tracker.}
+  s.description = %q{A tool used to give high-level visibility into features that are being built, and where in the dev cycle they are. Obviously uses Pivotal Tracker.}
 
   s.rubyforge_project = "pivotal-epic-tracker"
 

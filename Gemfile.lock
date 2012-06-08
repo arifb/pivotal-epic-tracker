@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    pivotal-roadmap-tracker (0.0.1)
+    pivotal-epic-tracker (0.0.1)
       pivotal-tracker
 
 GEM
@@ -29,4 +29,4 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  pivotal-roadmap-tracker!
+  pivotal-epic-tracker!

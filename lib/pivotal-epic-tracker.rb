@@ -1,6 +1,15 @@
 require "pivotal-tracker"
 require "pivotal-epic-tracker/version"
 
+# A gem that utilizes the pivotal-tracker gem to track epic's
+# the way we do at chimp (http://chimpfund.com).
+#
+# Public: return epic status information for a project and label. An epic
+# is one of the following states:
+#   Specced: if there is a needs-design label on associated ticket.
+#   Designed: if there is a ready-to-code label on associated ticket.
+#   Tested: if all tickets are accepted.
+#
 module PivotalEpicTracker
 
   def connect_to_project(token, project_id, use_ssl = true)

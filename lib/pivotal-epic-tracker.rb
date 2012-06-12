@@ -43,7 +43,7 @@ module PivotalEpicTracker
     end
 
     def get_stories
-      @project.stories.all(:label => @epic_label)
+      @project.stories.all(:label => @epic_label, :includedone => true)
     end
 
     def get_labels

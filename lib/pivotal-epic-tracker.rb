@@ -1,14 +1,14 @@
 require "pivotal-tracker"
 require "pivotal-epic-tracker/version"
 
-# A gem that utilizes the pivotal-tracker gem to track epic's
-# the way we do at chimp (http://chimpfund.com).
+# Public: A gem that utilizes the pivotal-tracker gem to track epic's
+# the way we do at chimp (http://chimp.net).
 #
-# Public: return epic status information for a project and label. An epic
-# is one of the following states:
-#   Specced: if there is a needs-design label on associated ticket.
-#   Designed: if there is a ready-to-code label on associated ticket.
-#   Tested: if all tickets are accepted.
+# Return epic status information for a project and label. An epic
+# is in one of the following states:
+#   Specced: if there is a needs-design label on associated ticket
+#   Designed: if there is a ready-to-code label on associated ticket
+#   Tested: if all tickets are accepted
 #
 module PivotalEpicTracker
 
@@ -18,6 +18,10 @@ module PivotalEpicTracker
     PivotalTracker::Project.find(project_id)
   end
 
+  # Public: return an EpicStatus object giving visibility to a Pivotal Epic
+  # and whether it is specced, designed, tested. Also gives visibility to the 
+  # number of total stories and how many of those are delivered.
+  #
   def get_epic_status(project, label)
     e = EpicStatus.new(project, label)
     e.get_status
@@ -25,7 +29,7 @@ module PivotalEpicTracker
   end
 
   class EpicStatus
-    attr_accessor :specced, :designed, :tested, :num_stories, :num_stories_delivered, :deployed_to_staging, :deployed_to_production
+    attr_accessor :specced, :designed, :tested, :num_stories, :num_stories_delivered
 
     def initialize(project, label)
       @project = project
